@@ -1,0 +1,85 @@
+//#include<stack>
+//#include <string>
+//#include<iostream>
+//using namespace std;
+//
+//int main()
+//{
+//	string before = "Data Structures";
+//
+//	stack<char> st1;
+//
+//
+//	for (int i = 0; i <= before.length(); i++)
+//	{
+//		char ab = before[i];
+//		st1.push(ab);
+//	}
+//
+//	for (int i = 0; i <= before.length(); i++)
+//	{
+//		cout << st1.top();
+//		st1.pop();
+//	}
+//	for (int i = 0; i <= st1.size(); i++)
+//	{
+//		char bc = st1.top();
+//		st2.push(bc);
+//	}
+//	for (int i = 0; i <= st1.size(); i++)
+//	{
+//		cout << st2.top();
+//	}
+//return 0;
+//}
+//
+//
+//
+//
+////for(char c:before)
+//// 		st1.push(c);
+//// 	for(char c:before){
+////		cout<<st1.top();
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+#include <iostream>
+#include <stack>
+#include <string>
+using namespace std;
+
+int main(void) {
+	stack<string> s1;
+	string before = "Data Structures";
+	s1.push(before);
+	cout << "Stack 1: " << s1.top() << endl;
+	for (int i = 0; i <= before.length(); i++) {
+		char ab = before[i];
+		s1.push(ab);
+	}
+
+	for (int i = 0; i <= before.length(); i++) {
+		cout << s1.top();
+		s1.pop();
+	}
+
+	stack<string> s2(s1);
+
+	cout << "Contents of Stack 1 in Stack 2: ";
+	while (!s2.empty()) {
+		cout << s2.top() << endl;
+		s2.pop();
+	}
+
+	return 0;
+}
